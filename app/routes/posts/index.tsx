@@ -1,7 +1,5 @@
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-
-import type { Post } from "~/models/post.server";
 import { getPosts } from "~/models/post.server";
 
 type LoaderData = {
@@ -22,7 +20,7 @@ export default function Posts() {
         <main>
             <h1>Posts</h1>
             <ul>
-                {posts.map((post: Post) => (
+                {posts.map((post) => (
                     <li key={post.slug}>
                         <Link
                             to={post.slug}
